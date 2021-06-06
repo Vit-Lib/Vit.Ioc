@@ -17,7 +17,6 @@ namespace App
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseInfo(); //(ori.3)
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

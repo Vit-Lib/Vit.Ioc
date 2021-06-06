@@ -13,6 +13,7 @@ namespace App
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .Populate()//(demo.2)
+                //.UseUrls(new string[] { "http://*:5123" }) //(ori.1)
                 .UseStartup<Startup>();
     }
 }

@@ -7,8 +7,7 @@ namespace Vit.Ioc.Demo.Controllers
 {
     public static class Logical
     {
-
-        public static void UseUser(this IServiceCollection services,int age)
+        public static void UseUser(this IServiceCollection services, int age)
         {
             services.AddScoped<IUser, UserA>();
 
@@ -21,7 +20,6 @@ namespace Vit.Ioc.Demo.Controllers
                 return user;
             });
         }
-
         public static void UseInfo(this IApplicationBuilder app)
         {
             app.Use(async (context, next) =>
@@ -34,7 +32,5 @@ namespace Vit.Ioc.Demo.Controllers
                 await next();
             });
         }
-
-
     }
 }

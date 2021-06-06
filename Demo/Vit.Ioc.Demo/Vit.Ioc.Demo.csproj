@@ -10,18 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Vit.Ioc" Version="2.2.4" />
   </ItemGroup>
-
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Vit.Ioc\Vit.Ioc.csproj" />
-  </ItemGroup>
-  
+ 
   <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup> 
- 
+  </ItemGroup>  
 
 </Project>
