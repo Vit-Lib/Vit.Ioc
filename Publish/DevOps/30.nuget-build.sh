@@ -41,8 +41,8 @@ dotnet pack --configuration Release --output '/root/code/Publish/nuget'
 # push to nuget server
 for file in /root/code/Publish/nuget/*.nupkg ; 
 do
-    echo nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
-    dotnet nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
+    echo [suppose to do by did not do]nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
+    # dotnet nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
 done
 " 
 
