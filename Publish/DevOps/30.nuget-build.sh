@@ -34,14 +34,15 @@ docker run -i --rm \
 --env LANG=C.UTF-8 \
 -v $codePath:/root/code \
 serset/dotnet:6.0-sdk \
-bash -c "cd /root/code/Vit.Ioc;
-dotnet build --configuration Release;
-dotnet pack --configuration Release --output '/root/code/Publish/nuget';
+bash -c "cd /root/code/Vit.Ioc
+dotnet build --configuration Release
+dotnet pack --configuration Release --output '/root/code/Publish/nuget'
 
 # push to nuget server
 for file in /root/code/Publish/nuget/*.nupkg ; 
 do
-    dotnet nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER};
+    echo nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
+    dotnet nuget push \$file -k ${NUGET_KEY} -s ${NUGET_SERVER}
 done
 " 
 
