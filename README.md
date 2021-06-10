@@ -1,7 +1,7 @@
 # Vit.Ioc 
-在ASP.NET Core中，我们一般会用到自带的IOC容器，或者使用第三方IOC容器（如Autofac）。自带容器不支持配置文件注入，而第三方又过于庞大，接下来介绍的Vit.Ioc是一套开源的依赖注入库，它可以通过配置文件实现依赖注入，最重要的是，它使用起来非常简单！简单！简单！
-[源码地址](https://github.com/serset/Vit.Ioc)
-我们用一个例子说明Vit.Ioc的所有用法。
+在ASP.NET Core中，我们一般会用到自带的IOC容器，或者使用第三方IOC容器（如Autofac）。自带容器不支持配置文件注入，而第三方又过于庞大，接下来介绍的Vit.Ioc是一套开源的依赖注入库，它可以通过配置文件实现依赖注入，最重要的是，它使用起来非常简单！简单！简单！    
+[源码地址](https://github.com/serset/Vit.Ioc)    
+我们用一个例子说明Vit.Ioc的所有用法。    
 
 # (x.1)一个不使用Vit.Ioc的例子
 首先，我们创建一个普通的Web项目，我们看一下它的3个cs文件
@@ -155,9 +155,9 @@ namespace Demo.Controllers
 
 ```
 
-这个项目主要提供两个api接口 /info 和 /api/Values,分别返回 字符串"hello world!",和通过依赖注入的User对象列表。
-您可以在[这里](https://github.com/serset/Vit.Ioc/tree/main/Demo/Vit.Ioc.Demo.Ori)查看所有的代码。
-这是一个比较简单的项目，对依赖注入使用的方式也没有什么不妥，主要的问题就是，依赖注入是通过代码实现的，在编译的时候就确定了代码注入逻辑。
+这个项目主要提供两个api接口 /info 和 /api/Values,分别返回 字符串"hello world!",和通过依赖注入的User对象列表。    
+您可以在[这里](https://github.com/serset/Vit.Ioc/tree/main/Demo/Vit.Ioc.Demo.Ori)查看所有的代码。    
+这是一个比较简单的项目，对依赖注入使用的方式也没有什么不妥，主要的问题就是，依赖注入是通过代码实现的，在编译的时候就确定了代码注入逻辑。    
 
 
 # (x.2)使用Vit.Ioc的例子
@@ -286,10 +286,10 @@ namespace App
   "AllowedHosts": "*"
 }
 ```
-[代码地址](https://github.com/serset/Vit.Ioc/tree/main/Demo/Vit.Ioc.Demo)
+[代码地址](https://github.com/serset/Vit.Ioc/tree/main/Demo/Vit.Ioc.Demo)    
 可以看到，代码注入的三处地方 (ori.1)、(ori.2)、(ori.3) 都通过配置文件进行了实现，而在Program.cs文件中多了一行
 ```csharp
                 .Populate()//(demo.2)
 ```
-就是这行代码触发了自动从配置文件中进行代码注入的功能。而注入的不仅可以是类，也可以是静态函数。
-如果这三个地方都可以进行注入，那我们平常用到的绝大部分场景都能注入，这无疑增加了代码的灵活性。
+就是这行代码触发了自动从配置文件中进行代码注入的功能。而注入的不仅可以是类，也可以是静态函数。    
+如果这三个地方都可以进行注入，那我们平常用到的绝大部分场景都能注入，这无疑增加了代码的灵活性。    
