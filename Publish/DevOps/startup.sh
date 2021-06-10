@@ -1,7 +1,7 @@
 set -e
 
 #----------------------------------------------
-#(x.1)当前路径 
+#(x.1)褰撳墠璺緞 
 export curWorkDir=$PWD
 export curPath=$(dirname $0)
 
@@ -39,9 +39,9 @@ export version=`grep '<Version>' ${codePath} -r --include *.csproj | grep -oP '>
 
 
 #----------------------------------------------
-echo "(x.3)自动发布 $name-$version"
+echo "(x.3)鑷姩鍙戝竷 $name-$version"
 
-for file in ./*.sh
+for file in *.sh
 do
     if [[ $file != "startup.sh" ]]
     then
