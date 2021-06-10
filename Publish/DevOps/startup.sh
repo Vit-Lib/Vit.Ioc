@@ -1,19 +1,13 @@
-set -ex
+set -e
 
 #----------------------------------------------
 #(x.1)当前路径 
-export curWorkDir=$PWD
-export curPath=$(dirname $0)
+curWorkDir=$PWD
 
-echo 1curWorkDir:${curWorkDir}
-echo 1curPath:${curPath}
-cd $curPath/../..
-echo 2curWorkDir:${curWorkDir}
-echo 2curPath:${curPath} 
+cd $curWorkDir/../..
 export codePath=$PWD
-cd $curPath
-echo 3curWorkDir:${curWorkDir}
-echo 4curPath:${curPath}
+cd $curWorkDir
+
 
 export name=Vit.Ioc
 export projectPath=Vit.Ioc
@@ -35,7 +29,7 @@ export projectPath=Vit.Ioc
 #----------------------------------------------
 echo "(x.2)get version" 
 export version=`grep '<Version>' ${codePath} -r --include *.csproj | grep -oP '>(.*)<' | tr -d '<>'`
-echo $version
+# echo $version
 
 
 
@@ -46,7 +40,7 @@ echo $version
 #----------------------------------------------
 echo "(x.3)自动发布 $name-$version"
 
-for file in ./*.sh
+for file in *.sh
 do
     if [[ $file != "startup.sh" ]]
     then
@@ -62,4 +56,4 @@ done
  
 #----------------------------------------------
 #(x.9)
-cd $curWorkDir
+#cd $curWorkDir
