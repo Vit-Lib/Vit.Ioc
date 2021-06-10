@@ -7,7 +7,7 @@ export curPath=$(dirname $0)
 
 cd $curPath/../..
 export codePath=$PWD
-cd $curWorkDir
+cd $curPath
 
 #  export codePath=/root/docker/jenkins/workspace/sqler/svn
 
@@ -36,4 +36,4 @@ sh 91.release-github.sh
  
 #----------------------------------------------
 #(x.9)
-#cd $curWorkDir
+cd $curWorkDir
