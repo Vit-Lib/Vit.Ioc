@@ -5,10 +5,12 @@ set -e
 export curWorkDir=$PWD
 export curPath=$(dirname $0)
 
+ls
 cd $curPath/../..
+ls
 export codePath=$PWD
 cd $curPath
-
+ls
 
 export name=Vit.Ioc
 export projectPath=Vit.Ioc
@@ -30,7 +32,7 @@ export projectPath=Vit.Ioc
 #----------------------------------------------
 echo "(x.2)get version" 
 export version=`grep '<Version>' ${codePath} -r --include *.csproj | grep -oP '>(.*)<' | tr -d '<>'`
-# echo $version
+echo $version
 
 
 
@@ -41,7 +43,7 @@ export version=`grep '<Version>' ${codePath} -r --include *.csproj | grep -oP '>
 #----------------------------------------------
 echo "(x.3)自动发布 $name-$version"
 
-for file in *.sh
+for file in `ls`
 do
     if [[ $file != "startup.sh" ]]
     then
