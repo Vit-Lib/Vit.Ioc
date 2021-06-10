@@ -1,16 +1,19 @@
-set -e
+set -ex
 
 #----------------------------------------------
 #(x.1)当前路径 
 export curWorkDir=$PWD
 export curPath=$(dirname $0)
 
-ls
+echo 1curWorkDir:${curWorkDir}
+echo 1curPath:${curPath}
 cd $curPath/../..
-ls
+echo 2curWorkDir:${curWorkDir}
+echo 2curPath:${curPath} 
 export codePath=$PWD
 cd $curPath
-ls
+echo 3curWorkDir:${curWorkDir}
+echo 4curPath:${curPath}
 
 export name=Vit.Ioc
 export projectPath=Vit.Ioc
@@ -43,7 +46,7 @@ echo $version
 #----------------------------------------------
 echo "(x.3)自动发布 $name-$version"
 
-for file in `ls`
+for file in ./*.sh
 do
     if [[ $file != "startup.sh" ]]
     then
