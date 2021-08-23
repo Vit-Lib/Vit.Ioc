@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Vit.Ioc" Version="2.2.4" />
+    <PackageReference Include="Vit.Ioc" Version="2.2.5" />
   </ItemGroup>
  
   <ItemGroup>
