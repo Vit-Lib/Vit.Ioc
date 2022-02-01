@@ -1,11 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+
 using System;
 using System.Runtime.CompilerServices;
+
+using Vit.Extensions;
 
 namespace Vit.Ioc
 {
     public static class IocHelp
-    {         
+    {
         public static readonly Ioc Instance = new Ioc();
 
 
@@ -435,7 +438,7 @@ namespace Vit.Ioc
 
         #region SetServiceCollection
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetServiceCollection(IServiceCollection serviceCollection=null)
+        public static void SetServiceCollection(IServiceCollection serviceCollection = null)
         {
             Instance.SetServiceCollection(serviceCollection);
         }
@@ -488,5 +491,12 @@ namespace Vit.Ioc
         }
         #endregion
 
+
+        #region Populate        
+        public static Ioc Populate(string configPath = "Ioc")
+        {
+            return Instance.Populate(configPath);
+        }
+        #endregion
     }
 }
